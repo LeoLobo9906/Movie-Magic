@@ -1,0 +1,32 @@
+{
+  "name": "movie-magic-backend",
+  "version": "1.0.0",
+  "description": "Backend for Movie Magic app — search, details, reviews, and favorites using TMDb & Supabase",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "movie",
+    "backend",
+    "express",
+    "tmdb",
+    "supabase"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0",
+    "axios": "^0.27.2",
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^13.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

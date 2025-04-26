@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light theme */
+body {
+  @apply bg-gray-50 text-gray-800;
+}
+
+/* Dark theme */
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}

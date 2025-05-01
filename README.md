@@ -27,4 +27,4 @@ A web application that allows users to discover, browse, and review movies and T
 - client/ # React frontend
 - server/ # Node.js & Express backend
 - README.md # Project documentation
--[Movie Magic - ScreenWizards (1).pdf](https://github.com/user-attachments/files/20003087/Movie.Magic.-.ScreenWizards.1.pdf)
+-(https://github.com/user-attachments/files/20003087/Movie.Magic.-.ScreenWizards.1.pdf)

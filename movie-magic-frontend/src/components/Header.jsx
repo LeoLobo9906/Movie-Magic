@@ -31,20 +31,23 @@ export default function Header({ user }) {
           <Link to="/" className="text-2xl font-bold text-gray-800 dark:text-gray-100">
             {t('Movie Magic')}
           </Link>
-          <Link to="/search" className="hover:underline text-gray-600 dark:text-gray-300">
+          {/*<Link to="/search" className="hover:underline text-gray-600 dark:text-gray-300">
             {t('Search')}
-          </Link>
+          </Link>*/}
           <Link to="/favorites" className="hover:underline text-gray-600 dark:text-gray-300">
             {t('Favorites')}
           </Link>
           <Link to="/watchlist" className="hover:underline text-gray-600 dark:text-gray-300">
             {t('Watchlist')}
           </Link>
+          <Link to="/profile" className="hover:underline text-gray-600 dark:text-gray-300">
+            {t('Profile')}
+          </Link>
         </nav>
         <div className="flex items-center space-x-2">
           <button
             onClick={() => setDark(!dark)}
-            className="p-2 rounded bg-gray-200 dark:bg-gray-700 text-xl"
+            className="p-2 rounded bg-gray-200 text-xl"
             aria-label={t('Toggle Dark Mode')}
           >
             {dark ? '☀️' : '🌙'}

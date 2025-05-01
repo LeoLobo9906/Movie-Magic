@@ -1,5 +1,3 @@
-// src/pages/Details.jsx
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import {
@@ -16,7 +14,8 @@ import {
   postLike,
   deleteLike,
   getSimilar,
-  addFavorite
+  addFavorite,
+
 } from '../services/tmdb';
 import MovieCard from '../components/MovieCard';
 import ShareButtons from '../components/ShareButtons';
@@ -192,9 +191,8 @@ export default function Details({ user }) {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
             {images.slice(0, 12).map(img => (
               <img
-                key={img.file_path}
-                src={`https://image.tmdb.org/t/p/w300${img.file_path}`}
-                alt={`${detail.title || detail.name} backdrop`}
+              src={`https://image.tmdb.org/t/p/w300${img.file_path}`}
+              alt={`${detail.title || detail.name} backdrop`}
                 className="cursor-pointer rounded shadow hover:opacity-75"
                 onClick={() => setSelectedImage(img.file_path)}
               />
@@ -225,7 +223,7 @@ export default function Details({ user }) {
                 <select
                   value={editReviewRating}
                   onChange={e => setEditReviewRating(Number(e.target.value))}
-                  className="border rounded px-2"
+                  className="border rounded px-2 py-1 bg-white dark:bg-gray-800 text-black dark:text-white"
                 >
                   {[...Array(10)].map((_, i) => (
                     <option key={i+1} value={i+1}>{i+1}</option>
@@ -235,7 +233,7 @@ export default function Details({ user }) {
                   rows="3"
                   value={editReviewText}
                   onChange={e => setEditReviewText(e.target.value)}
-                  className="w-full border rounded px-2 py-1"
+                  className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                 />
                 <div className="space-x-2">
                   <button onClick={handleUpdateReview} className="bg-blue-500 text-white px-3 py-1 rounded">
@@ -279,7 +277,7 @@ export default function Details({ user }) {
                   {editingComment === c.id ? (
                     <div className="flex space-x-2">
                       <input
-                        className="flex-1 border rounded px-2"
+                        className="flex-1 border rounded px-2 py-1 bg-white dark:bg-gray-800 text-black dark:text-white"
                         value={editCommentText}
                         onChange={e => setEditCommentText(e.target.value)}
                       />
@@ -311,7 +309,7 @@ export default function Details({ user }) {
               {user && (
                 <div className="flex space-x-2 mt-2">
                   <input
-                    className="flex-1 border rounded px-2 py-1"
+                    className="flex-1 border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                     placeholder="Add a comment..."
                     value={newComments[r.id] || ''}
                     onChange={e =>
@@ -333,7 +331,7 @@ export default function Details({ user }) {
             <select
               value={rating}
               onChange={e => setRating(Number(e.target.value))}
-              className="border rounded px-2"
+              className="border rounded px-2 py-1 bg-white dark:bg-gray-800 text-black dark:text-white"
             >
               {[...Array(10)].map((_, i) => (
                 <option key={i+1} value={i+1}>{i+1}</option>
@@ -344,7 +342,7 @@ export default function Details({ user }) {
               value={text}
               onChange={e => setText(e.target.value)}
               placeholder="Your thoughts..."
-              className="w-full border rounded px-2 py-1"
+              className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 bg-white dark:bg-gray-800 text-black dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
             />
             <button onClick={handleAddReview} className="bg-blue-500 text-white px-4 py-2 rounded">
               Submit Review

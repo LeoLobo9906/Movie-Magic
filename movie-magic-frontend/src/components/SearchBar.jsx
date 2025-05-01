@@ -45,12 +45,12 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 bg-white p-4 rounded shadow">
+    <form onSubmit={handleSubmit} className="space-y-4 bg-white dark:bg-gray-800 p-4 rounded shadow">
       <div className="flex space-x-2">
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
-          className="border rounded px-3 py-2"
+          className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded px-3 py-2"
         >
           <option value="movie">Movie</option>
           <option value="tv">TV Show</option>
@@ -58,7 +58,7 @@ export default function SearchBar() {
         <input
           type="text"
           placeholder="Search titles…"
-          className="flex-1 border rounded px-3 py-2"
+          className="flex-1 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded px-3 py-2"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           required
@@ -83,7 +83,7 @@ export default function SearchBar() {
               className={`px-2 py-1 rounded border ${
                 selectedGenres.includes(g.id)
                   ? 'bg-blue-500 text-white'
-                  : 'bg-gray-100'
+                  : 'bg-gray-100 dark:bg-gray-700 dark:text-gray-200'
               }`}
             >
               {g.name}
@@ -95,33 +95,33 @@ export default function SearchBar() {
       {/* Year Range & Min Rating */}
       <div className="flex space-x-2">
         <div>
-          <label className="block text-sm">Year from</label>
+        <label className="block text-sm text-gray-700 dark:text-gray-300">Year from</label>
           <input
             type="number"
             min="1900"
             max={new Date().getFullYear()}
             value={yearFrom}
             onChange={(e) => setYearFrom(e.target.value)}
-            className="border rounded px-2 py-1 w-24"
+            className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded px-2 py-1 w-24"
           />
         </div>
         <div>
-          <label className="block text-sm">Year to</label>
+        <label className="block text-sm text-gray-700 dark:text-gray-300">Year to</label>
           <input
             type="number"
             min="1900"
             max={new Date().getFullYear()}
             value={yearTo}
             onChange={(e) => setYearTo(e.target.value)}
-            className="border rounded px-2 py-1 w-24"
+            className="border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded px-2 py-1 w-24"
           />
         </div>
         <div>
-          <label className="block text-sm">Min Rating</label>
+        <label className="block text-sm text-gray-700 dark:text-gray-300">Min Rating</label>
           <select
             value={minRating}
             onChange={(e) => setMinRating(e.target.value)}
-            className="border rounded px-2 py-1"
+            className="border rounded px-2 py-1 bg-white dark:bg-gray-700 text-black dark:text-white"
           >
             <option value="">Any</option>
             {[...Array(10)].map((_, i) => (

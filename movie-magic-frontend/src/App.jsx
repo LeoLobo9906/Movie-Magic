@@ -11,6 +11,7 @@ import SearchResults from './pages/SearchResults';
 import Details from './pages/Details';
 import Favorites from './pages/Favorites';
 import Watchlist from './pages/Watchlist';
+import Profile from './pages/Profile';
 import Login from './pages/Login';
 import { onAuthChange } from './services/auth';
 
@@ -51,6 +52,12 @@ export default function App() {
             path="/watchlist"
             element={
               user ? <Watchlist /> : <Navigate to="/login" replace />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              user ? <Profile /> : <Navigate to="/login" replace />
             }
           />
           <Route
